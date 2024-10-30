@@ -1,0 +1,587 @@
+/* Google Fonts - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100%;
+  background: #f8fbfd;
+  transition: background-color 0.3s ease;
+}
+
+.dark-mode {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 60px; /* Collapsed width */
+  height: 100vh;
+  background-color: #ffffff;
+  transition: width 0.3s ease, background-color 0.3s ease;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.sidebar:hover {
+  width: 200px; /* Expanded width on hover */
+}
+
+.sidebar.dark-mode {
+  background-color: #333333;
+}
+
+/* Logo and Menu Icon */
+.logo {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  transition: padding 0.3s ease;
+}
+
+.logo .logo-name {
+  color: #333;
+  font-size: 25px;
+  font-weight: 500;
+  display: none; /* Hidden initially */
+}
+
+.sidebar:hover .logo .logo-name {
+  display: inline;
+}
+
+.menu-icon {
+  font-size: 24px;
+  cursor: pointer;
+  color: #707070;
+  margin-right: 8px;
+  z-index: 1000;
+  position: fixed;
+  top: 20px;
+  left: 10px;
+}
+
+.dark-mode .menu-icon {
+  color: #ffffff;
+}
+
+/* Sidebar Content */
+.sidebar-content .list {
+  list-style: none;
+  padding: 10px 0;
+}
+
+.list .nav-link {
+  display: flex;
+  align-items: center;
+  padding: 14px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #707070;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-link .icon {
+  font-size: 24px;
+  color: #707070;
+  margin-right: 10px;
+}
+
+.nav-link:hover {
+  background-color: #4070f4;
+  color: #ffffff;
+}
+
+.nav-link:hover .icon {
+  color: #ffffff;
+}
+
+/* Text within Sidebar - hidden initially */
+.link {
+  display: none;
+}
+
+.sidebar:hover .link {
+  display: inline;
+}
+
+/* Dark Mode Specific Styling for Sidebar */
+.dark-mode .nav-link {
+  color: #b3b3b3;
+}
+
+.dark-mode .nav-link:hover {
+  background-color: #505050;
+  color: #ffffff;
+}
+
+.dark-mode .nav-link .icon {
+  color: #b3b3b3;
+}
+
+.dropdown {  
+  position: relative;  
+  display: inline-block;  
+}  
+
+.dropdown-content {  
+  display: none;  
+  position: absolute;  
+  background-color: #333; 
+  min-width: 160px;  
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);  
+  z-index: 1;  
+  border-radius: 8px;
+}  
+
+.dropdown:hover .dropdown-content {  
+  display: block;  
+}  
+
+.dropdown-content a {  
+  color: #fff; 
+  padding: 12px 16px;  
+  text-decoration: none;  
+  display: block;  
+  padding: 14px 12px;  
+  border-radius: 8px;
+}  
+
+.dropdown-content a:hover {  
+  background-color: #4070f4; 
+} 
+
+
+
+img
+{
+  width: 100%;
+  height: 100%;
+}
+
+.bottom-content {  
+   margin-top: auto; /* Memastikan bagian ini berada di bawah */  
+}  
+  
+.bottom-content .lists {  
+    list-style: none;  
+    padding: 0; /* Menghapus padding default */  
+}
+
+.overlay {  
+  display: none; /* Menghapus overlay karena tidak diperlukan */  
+}  
+
+.header {  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: margin-left 0.3s ease;
+  position: fixed;
+  top: 5px;
+  left: 65px;
+  right: 20px;
+  z-index: 1000;
+  border-radius: 15px;
+}  
+.sidebar:hover ~ .header {
+  margin-left: 200px;
+}
+.search-container {  
+    display: flex;  
+    align-items: center;  
+    background: #f1f1f1;  
+    border-radius: 10px;  
+    padding: 5px;  
+    width: 1500px;
+}  
+
+.search-input {  
+    border: none;  
+    background: transparent;  
+    outline: none;  
+    padding: 8px ;  
+    border-radius: 10px; 
+    flex-grow: 1; /* Membuat input mengisi ruang yang tersedia */ 
+}  
+
+.header-icons {  
+    display: flex;  
+    align-items: center;  
+}  
+
+.header-icons .icon {  
+    font-size: 24px;  
+    margin-left: 20px;  
+    cursor: pointer;  
+    color: #707070;
+}  
+
+.profile-icon {  
+    width: 40px;  
+    height: 40px;  
+    border-radius: 50%;  
+    overflow: hidden;  
+    margin-left: 20px;  
+}  
+
+.profile-icon img {  
+    width: 100%;  
+    height: auto;  
+}
+
+main {  
+  margin-right: 40px; /* Memberikan ruang untuk sidebar */  
+  padding: 20px;  
+  margin-top: 80px; /*Atur sesuai tinggi header */
+}
+
+.main-content {
+    transition: margin-left 0.3s ease;
+}
+
+/* Saat sidebar terbuka, dorong konten */
+ .sidebar:hover ~ .main-content {
+    margin-left: 220px;
+}
+
+.card-container {  
+    display: flex;  
+    flex-wrap: wrap;  
+    justify-content: space-between;  
+    padding: 30px;  
+    margin-top: 20px;
+}  
+
+.card {  
+    width: calc(50% - 10px); /* Mengatur lebar kartu */  
+    margin-bottom: 20px; /* Jarak antara baris kartu */  
+    padding: 20px;  
+    border-radius: 10px;  
+    color: white;  
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  
+}  
+
+.blue {  
+    background-color: #4A90E2; /* Warna biru */  
+}  
+
+.light-blue {  
+    background-color: #A4D8E1; /* Warna biru muda */  
+}  
+
+.purple {  
+    background-color: #9B59B6; /* Warna ungu */  
+}  
+
+.green {  
+    background-color: #1ABC9C; /* Warna hijau */  
+}  
+
+.amount {  
+    font-size: 24px;  
+    font-weight: bold;  
+}  
+
+.saved {  
+    font-size: 14px;  
+    margin-top: 10px;  
+}
+
+.charts-container {  
+    display: flex;  
+    flex-wrap: wrap;  
+    justify-content: space-between;  
+    margin-top: 20px;  
+    padding: 20px;
+}  
+
+.chart {  
+    flex: 1;  
+    margin-right: 0px;  
+    padding: 20px;  
+    border-radius: 10px;  
+    background-color: #48eef1;  
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  
+}  
+
+.chart-controls {  
+    display: flex;  
+    justify-content: space-between;  
+    margin-bottom: 20px;  
+}  
+
+.chart-placeholder {  
+    height: 200px; /* Tinggi untuk placeholder grafik */  
+    background-color: #e0e0e0;  
+    border-radius: 10px;  
+}  
+
+.budget-container {  
+    margin-top: 20px;
+    display: flex;  
+    flex-direction: column;  
+    flex: 1;
+}  
+
+.budget {  
+    background-color: #f9f9f9;  
+    border-radius: 10px;  
+    padding: 20px;  
+    margin-bottom: 20px;  
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  
+    text-align: center;  
+}  
+
+.progress-circle {  
+    width: 100px;  
+    height: 100px;  
+    border-radius: 50%;  
+    border: 10px solid #e0e0e0;  
+    display: flex;  
+    align-items: center;  
+    justify-content: center;  
+    position: relative;  
+    margin: 0 auto 10px;  
+}  
+
+.progress-circle span {  
+    position: absolute;  
+    font-size: 24px;  
+    font-weight: bold;  
+}
+
+.chart-placeholder {
+    width: 100%;
+    height: 400px; 
+    background-color: rgba(240, 240, 240, 0.9); 
+    border-radius: 8px; 
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.pie-chart {  
+    width: 300px;   
+    height: 300px;  
+    background-color: #e0e0e0; 
+    border-radius: 0; 
+    position: relative; 
+    margin: 0 auto; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}  
+
+.pie-chart .label {  
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    font-size: 16px; 
+    font-weight: bold; 
+    color: #333; 
+}
+
+@media (max-width: 768px) {  
+    .pie-chart {  
+        width: 200px;  
+        height: 200px;  
+    }  
+}
+
+
+/* Google Fonts - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100%;
+  background: #f8fbfd;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 60px; /* Default collapsed width */
+  background: #fff;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+  transition: width 0.3s ease; /* Smooth transition for sidebar width */
+}
+
+nav:hover {
+  width: 260px; /* Expanded width on hover */
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.logo .menu-icon {
+  color: #333;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.logo .logo-name {
+  display: none; /* Hide logo name by default */
+}
+
+nav:hover .logo .logo-name {
+  display: block; /* Show logo name on hover */
+  color: #333;
+  font-size: 18px;
+  font-weight: 600;
+  margin-left: 10px;
+}
+
+.sidebar-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px 16px;
+}
+
+.sidebar-content .list {
+  list-style: none;
+  padding: 0;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  margin: 8px 0;
+  padding: 14px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #707070;
+  transition: background-color 0.3s ease;
+}
+
+.nav-link .icon {
+  font-size: 20px;
+  color: #707070;
+}
+
+.nav-link .link {
+  display: none; /* Hide link text by default */
+  margin-left: 14px;
+  font-size: 16px;
+  color: #707070;
+  font-weight: 400;
+}
+
+nav:hover .nav-link .link {
+  display: block; /* Show link text on hover */
+}
+
+.nav-link:hover {
+  background-color: #4070f4;
+}
+
+.nav-link:hover .icon,
+.nav-link:hover .link {
+  color: #fff;
+}
+
+.nav-link.active {
+  background-color: #4070f4; /* Active link background */
+}
+
+.nav-link.active .icon,
+.nav-link.active .link {
+  color: #fff;
+}
+
+.bottom-content {
+  margin-top: auto;
+}
+
+.logout, .dark-mode-toggle {
+  display: flex;
+  align-items: center;
+  padding: 14px 12px;
+  color: #707070;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.logout:hover, .dark-mode-toggle:hover {
+  color: #4070f4;
+}
+
+.dark-mode-toggle .icon {
+  margin-right: 10px;
+}
+
+.dark-mode-toggle span {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  nav {
+    width: 60px;
+  }
+  
+  nav:hover {
+    width: 200px;
+  }
+}
+
+
+/* Icon container styling */
+.icon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.icon-container .icon {
+  font-size: 24px;
+  color: #707070;
+  margin: 10px 0;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.icon-container .icon:hover {
+  color: #4070f4;
+}
+
+/* Ensure icon container is visible when sidebar is collapsed */
+.sidebar .icon-container {
+  display: flex;
+}
+
+/* Hide icon container when sidebar is expanded */
+nav:hover .icon-container {
+  display: none;
+}
